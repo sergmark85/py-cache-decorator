@@ -3,7 +3,6 @@ from functools import wraps
 
 def cache(func: Callable) -> Callable:
     dict_result = {}
-
     @wraps(func)
     def inner(*args: Any, **kwargs: Any) -> Any:
         key = (args, tuple(kwargs.items()))
